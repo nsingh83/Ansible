@@ -1,4 +1,4 @@
-Steps to install Ansible on RHEL 8.x distribution
+Steps to install Ansible on RHEL 8.X distribution
 ==================================================
 
 Enable EPEL repo:
@@ -8,43 +8,24 @@ Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group
 that creates, maintains, and manages a high quality set of additional packages for 
 Enterprise Linux, including, but not limited to, Red Hat Enterprise Linux (RHEL), 
 CentOS and Scientific Linux (SL), Oracle Linux (OL).
+
+Link to EPEL repo:
+-------------------
 https://dl.fedoraproject.org/pub/epel/
 https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 
+Commands to install Ansible:
+----------------------------
 [root@host2 yum.repos.d]# dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-[root@host2 yum.repos.d]#cd /etc/yum.repos.d
-[root@host2 yum.repos.d]# 
-[root@host2 yum.repos.d]# ll
-total 48
--rw-r--r--. 1 root root    80 Oct 13 18:17 AppStream.repo
--rw-r--r--. 1 root root    71 Oct 13 18:17 BaseOS.repo
--rw-r--r--. 1 root root  1167 Dec 18  2019 epel-modular.repo
--rw-r--r--. 1 root root  1249 Dec 18  2019 epel-playground.repo
--rw-r--r--. 1 root root  1104 Dec 18  2019 epel.repo
--rw-r--r--. 1 root root  1266 Dec 18  2019 epel-testing-modular.repo
--rw-r--r--. 1 root root  1203 Dec 18  2019 epel-testing.repo
--rw-r--r--. 1 root root 18662 Nov  4 19:10 redhat.repo
-[root@host2 yum.repos.d]# 
 [root@host2 yum.repos.d]# dnf update
-Updating Subscription Management repositories.
-Extra Packages for Enterprise Linux Modular 8 - x86_64                                                                                                  15 kB/s |  97 kB     00:06    
-Extra Packages for Enterprise Linux 8 - x86_64                                                                                                         4.0 MB/s | 8.3 MB     00:02    
-Dependencies resolved.
-Nothing to do.
-Complete!
-[root@host2 yum.repos.d]# 
-[root@host2 yum.repos.d]# 
 [root@host2 yum.repos.d]# dnf repolist
-Updating Subscription Management repositories.
-repo id                                                                repo name
-AppStream                                                              AppStream
-BaseOS                                                                 BaseOS
-epel                                                                   Extra Packages for Enterprise Linux 8 - x86_64
-epel-modular                                                           Extra Packages for Enterprise Linux Modular 8 - x86_64
-[root@host2 yum.repos.d]# 
-[root@host2 yum.repos.d]# 
 [root@host2 yum.repos.d]# dnf install ansible
+
+
+Commands to check the ansible vesrion:
+--------------------------------------
+
 [root@host2 yum.repos.d]# which ansible
 /usr/bin/ansible
 [root@host2 yum.repos.d]# 
@@ -56,3 +37,5 @@ ansible 2.9.15
   executable location = /usr/bin/ansible
   python version = 3.6.8 (default, Jun 26 2020, 12:10:09) [GCC 8.3.1 20191121 (Red Hat 8.3.1-5)]
 [root@host2 yum.repos.d]# 
+
+
