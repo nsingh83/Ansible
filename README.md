@@ -10,3 +10,4 @@ Below topics are covered along with working yaml playbooks present in the **exam
 * Deploy files to managed hosts.  
 * Manage large projects.  
 * Simplify playbooks with roles.  
+* Troubleshoot Ansible.    
