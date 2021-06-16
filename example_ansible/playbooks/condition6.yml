@@ -1,0 +1,12 @@
+---
+- 
+   hosts: myservers
+   tasks:
+           - name: Installing postfix package
+             yum:
+                     name: postfix
+                     state: latest
+             
+             loop: "{{ansible_mounts}}"
+             when: item.mount == "/" and item.size_available > 4*1024*1024*1024
+...

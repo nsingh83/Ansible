@@ -1,0 +1,13 @@
+---
+- 
+  hosts: myservers
+  tasks:
+          - name: Running multiple commands in loop.
+            command: "{{item}}"
+            loop:
+                    - "ls -la /tmp"
+            register: output
+
+          - name: Printing the output
+            debug: var=output 
+...

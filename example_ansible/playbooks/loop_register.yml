@@ -1,0 +1,16 @@
+---
+- 
+  hosts: myservers
+  gather_facts: no
+  tasks:
+          - name: Running commands over managed host
+            shell: "{{item}}"
+            loop:
+                  - "ls -lrt /tmp"
+                  - "ls -lrt /home"
+                  - "ls -lrt /"
+            register: information
+
+          - name: Capturing the output of the commands
+            debug: var=information
+...

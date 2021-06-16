@@ -1,0 +1,14 @@
+---
+-
+ hosts: myservers
+ vars:
+         package: postfix
+         condition: true
+ tasks:
+         - name: Installing "{{package}}" package
+           yum:
+                   name: "{{package}}"
+                   state: latest
+           when: condition
+
+...

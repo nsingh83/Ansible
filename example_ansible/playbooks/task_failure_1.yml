@@ -1,0 +1,15 @@
+---
+- 
+ hosts: myservers
+ tasks:
+         - name: Start an imaginary service
+           service:
+                 name: hkjfckjsedh
+                 state: restarted
+           ignore_errors: yes
+         - name: Copy some files to managed hosts
+           copy:
+              src: /home/testuser/myscript.sh
+              dest: /tmp
+...
+

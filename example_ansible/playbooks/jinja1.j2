@@ -1,0 +1,17 @@
+
+{# This is file to configure the network #}
+This is the first line of the {{file_name}} file
+*********************************************
+system_name, {{ansible_facts['hostname']}}
+system_IP, {{ansible_facts['default_ipv4']['address']}}
+system_MAC, {{ansible_facts['default_ipv4']['macaddress']}}
+system_distro, {{ansible_facts['distribution']}}
+system_version, {{ansible_facts['distribution_version']}}
+system_kernel, {{ansible_facts['kernel']}}
+system_architecture, {{ansible_facts['architecture']}}
+{% if rhel8 %}
+system_distro_version,  RHEL8
+{% endif %}
+Permit Root Login, {{permit_root_login}}
+Allowed Users, {{allowed_usears}}
+********************************************

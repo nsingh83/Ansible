@@ -1,0 +1,19 @@
+---
+-
+ hosts: myservers
+ vars:
+         first_var:
+                 - name: teach1
+                   group: teachers
+                 - name: stu1
+                   group: students
+
+ tasks:
+         - name: Create Users
+           user:
+                   name: "{{item.name}}"
+                   groups: "{{item.group}}"
+                   state: present
+           #debug: msg="{{item.name}} {{item.age}}"
+           loop: "{{first_var}}"  
+...

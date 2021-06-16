@@ -1,0 +1,20 @@
+---
+ - 
+   hosts: myservers
+   vars:
+           file_name: system.cfg
+           permit_root_login: no
+           allowed_usears: All
+           rhel8: true
+
+   tasks:
+           - name: Creating a template file.
+             template:
+                     src: jinja1.j2
+                     dest: /tmp/system.cfg
+
+           - name: Copying the rendered info.
+             fetch:
+                     src: /tmp/system.cfg
+                     dest: /home/testuser/inventory
+...

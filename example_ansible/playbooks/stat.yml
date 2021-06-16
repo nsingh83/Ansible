@@ -1,0 +1,14 @@
+---
+- 
+  hosts: myservers
+  tasks:
+          - name: Getting stats of a file.
+            stat:
+                    path: /root/initial-setup-ks.cfg 
+                    #path: /usr/bin/ls 
+            register: stats_output
+          - name: Disply the file stats
+            debug: 
+               var: stats_output
+
+...

@@ -1,0 +1,9 @@
+---
+- 
+  hosts: myservers
+  tasks:
+          - name: Copying files from managed hosts to control server
+            fetch:
+                src: /tmp/this_is_from_mngd_host.txt
+                dest: /tmp
+...

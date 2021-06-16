@@ -1,0 +1,22 @@
+
+---
+- 
+  hosts: myservers
+  tasks: 
+        - name: Creating a file
+          file:
+                  path: /tmp/test.txt
+                  mode: 0666
+                  owner: testuser
+                  group: testuser
+                  state: touch
+        - name: Adding a line in file
+          lineinfile:
+                  path: /tmp/test.txt
+                  #line: "this is a test file created on 6feb"
+                  line: "{{item}}"
+                  state: present
+          loop:
+                  - "This is line one"
+                  - "This is line two"
+...

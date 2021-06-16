@@ -1,0 +1,10 @@
+---
+- 
+  hosts: myservers
+  tasks:
+          - name: this is a task to print ansible facts in detail.
+            debug: msg="{{item.mount}}" 
+            loop: "{{ansible_mounts}}"
+
+
+...

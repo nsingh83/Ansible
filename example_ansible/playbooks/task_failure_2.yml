@@ -1,0 +1,25 @@
+---
+- 
+ hosts: myservers
+ tasks:
+         - name: Start an imaginary service
+           service:
+                 name: nomads
+                 state: restarted
+           ignore_errors: yes
+         - name: Copy some files to managed hosts
+           copy:
+              src: ./myscript.sh
+              dest: /tmp
+         - name: Running a shell script
+           shell: bash /tmp/myscript.sh
+           register: information
+           failed_when: "'script failed' in information.stdout"
+         - name: Installing postfix package
+           yum:
+                   name: postfix
+                   state: latest    
+
+
+...
+

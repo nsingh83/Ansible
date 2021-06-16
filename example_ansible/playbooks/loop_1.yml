@@ -1,0 +1,16 @@
+---
+-
+ name: task to show the loop.
+ hosts: myservers
+ tasks:
+         - name: Run commands
+           shell: "{{ item }}"
+           loop:
+                   - "touch /tmp/one.txt"
+                   - "ls -lrt /tmp"  
+                   - "ls -lrt /tmp > /tmp/one.txt"  
+                   - "cat /etc/passwd | grep test"  
+           register: information
+         - name: printing the infomation
+           debug: var=information
+...

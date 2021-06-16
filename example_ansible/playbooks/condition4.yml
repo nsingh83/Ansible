@@ -1,0 +1,13 @@
+---
+-
+ hosts: myservers
+ tasks:
+         - name: Installing the postfix package.
+           yum:
+                   name: postfix
+                   state: latest
+           when: > 
+                   (ansible_distribution == "Suse"  and ansible_distribution_version == "8.1")
+                   or
+                   (ansible_kernel == "4.18.0-221.el8.x86_64")
+...

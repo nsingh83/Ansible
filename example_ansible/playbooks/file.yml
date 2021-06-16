@@ -1,0 +1,13 @@
+---
+- 
+  hosts: myservers
+  tasks: 
+        - name: Creating a file
+          file:
+                  path: /tmp/test.txt
+                  mode: 0644
+                  owner: testuser
+                  group: testuser
+                  state: touch
+                  #state: directory
+...

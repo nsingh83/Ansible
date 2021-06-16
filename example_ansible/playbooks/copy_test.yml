@@ -1,0 +1,9 @@
+---
+- 
+  hosts: myservers
+  tasks:
+         - name: Copying files to remote server.
+           copy:
+                   src: ./myfile
+                   dest: /tmp
+...

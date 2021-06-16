@@ -1,0 +1,14 @@
+---
+-
+ hosts: myservers
+ tasks:
+         - name: This play test the service module.
+           service:
+                   name: httpd
+                   state: started
+           register: information
+
+         - name: Task to show the output. 
+           debug:
+                  msg: "{{information}}"
+...

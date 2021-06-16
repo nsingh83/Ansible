@@ -1,0 +1,16 @@
+---
+-
+  name: This is a play to show register keyword
+  hosts: myservers
+  tasks:
+          - name: Running commands
+            #shell: "ls -lrt"
+            shell: "ls -lrt"
+            args:
+                    chdir: "/tmp"
+            register: output
+          - name: printing the OP.
+            debug:
+                var: output.stdout
+
+...

@@ -1,0 +1,16 @@
+---
+-
+ hosts: myservers
+ vars:
+         package: postfix
+         osDistros:
+                 - Fedora
+                 - CentOS
+                 - RedHat
+ tasks:
+         - name: Install "{{package}}" package
+           yum:
+                 name: "{{package}}"
+                 state: latest
+           when: ansible_distribution in osDistros 
+...

@@ -1,0 +1,17 @@
+---
+- 
+  hosts: myservers
+  gather_facts: no
+  tasks: 
+      - name: test the debug module
+        shell: "ls -l /tmp > /tmp/log1.txt"
+        register: information
+      - name:  going to print the output
+        debug: 
+        #var: information
+          msg:
+                  - NBS info.rc is "{{information.rc}}" 
+                  - NBSS info.stdout is "{{information.stdout}}"
+                  - NBS info.cmd is "{{information.cmd}}"
+
+...

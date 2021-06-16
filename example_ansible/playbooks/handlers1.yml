@@ -1,0 +1,29 @@
+---
+ -
+   name: first play
+   hosts: myservers
+   tasks:
+           - name: Install http package
+             yum:
+                     name: httpd     
+                     state: latest
+           - name: Copy a file.
+             copy:
+                     src: ./index.html
+                     dest: /var/www/html
+             notify:
+                     - add_http_in_firewall
+                     - restart_http
+   handlers:
+
+           - name: add_http_in_firewall
+             firewalld:
+                      service: http
+                      permanent: no
+                      state: enabled
+                      
+           - name: restart_http
+             service:
+                     name: httpd
+                     state: restarted 
+...

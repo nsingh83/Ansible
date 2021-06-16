@@ -1,0 +1,12 @@
+---
+-
+ hosts: myservers
+ vars:
+         first_var:
+                 - "touch two.txt"
+                 - "ls -lrt"
+ tasks:
+         - name: Run commands
+           shell: "{{ item }}"
+           loop: "{{first_var}}"  
+...

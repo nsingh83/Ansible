@@ -1,0 +1,21 @@
+---
+-
+  hosts: myservers
+  tasks:
+
+          - name: This task will gather facts
+            setup: 
+                     filter: 
+                     - "ansible_memory_mb"
+                     - "ansible_distribution"
+                     - "ansible_python_version"
+                     - "ansible_kernel"
+
+          - name: print the output
+            debug: 
+              msg: 
+                 - "{{ansible_memory_mb}}" 
+                 - "{{ansible_distribution}}" 
+                 - "{{ansible_python_version}}" 
+                 - "{{ansible_kernel}}" 
+...

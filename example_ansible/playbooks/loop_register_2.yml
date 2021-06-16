@@ -1,0 +1,15 @@
+---
+- 
+  hosts: myservers
+  tasks:
+          - name: Running commands over managed host
+            shell: "{{item}}"
+            loop:
+                  - "ls -lrt /tmp"
+                  - "ls -lrt /home"
+            register: information
+
+          - name: Capturing the output of the commands
+            debug: msg="{{item.stdout}}"
+            loop: "{{information['results']}}"
+...

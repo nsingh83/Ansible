@@ -1,0 +1,16 @@
+---
+-
+ hosts: myservers
+ vars:
+         first_var:
+                 - name: test1
+                   age: 32
+                 - name: test2
+                   age: 33
+
+ tasks:
+         - name: Run commands
+           #shell: "{{ item }}"
+           debug: msg="{{item.name}} {{item.age}}"
+           loop: "{{first_var}}"  
+...

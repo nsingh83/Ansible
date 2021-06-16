@@ -1,0 +1,24 @@
+
+---
+- 
+  hosts: myservers
+  tasks: 
+        - name: task1
+          file:
+                  path: /tmp/test_9may.txt
+                  mode: 0666
+                  owner: testuser
+                  group: testuser
+                  state: touch
+        - name: task2
+          blockinfile:
+                  path: /tmp/test_9may.txt
+                  block: |
+                          this is a test block created on 7th Feb
+                          this is a test block created on 7th Feb
+                          this is a test block created on 7th Feb
+                          this is a test block created on 7th Feb
+                          this is a test block created on 12dec
+                          this is a test block created on 12dec
+                  state: present
+...

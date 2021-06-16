@@ -1,0 +1,16 @@
+---
+- 
+  hosts: myservers
+  tasks: 
+        - name: Creating a file
+          file:
+                  #path: /tmp/handlers_9may2021.sh
+                  path: /tmp/test_dir_9may
+                  mode: '0777'
+                  owner: testuser
+                  group: testuser
+                  #path: /tmp/test_dir_2feb
+                  state: directory
+                  #state: touch
+                  #state: absent
+...
