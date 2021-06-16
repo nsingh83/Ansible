@@ -1,0 +1,6 @@
+---
+ - name: Installing the HTTPD package
+   yum:
+           name: httpd
+           state: latest
+...

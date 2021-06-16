@@ -1,0 +1,8 @@
+---
+ - name: Setting FirewallD Configuration
+   firewalld: 
+           service: http
+           permanent: no
+           state: enabled
+           immediate: yes
+...

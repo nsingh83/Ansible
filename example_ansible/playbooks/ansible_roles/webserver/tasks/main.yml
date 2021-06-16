@@ -1,0 +1,7 @@
+---
+# tasks file for /home/testuser/nbs_roles/webserver
+
+- import_tasks: install.yml
+- import_tasks: configure.yml
+- import_tasks: firewall.yml
+- import_tasks: service.yml
