@@ -1,6 +1,6 @@
 # Ansible
 This is a step by step Ansible automation guide.  
-Below topics are covered along with working yaml playbooks present in the example_ansible directory. 
+Below topics are covered along with working yaml playbooks present in the **example_ansible** directory. 
 
 * Ansible Introduction.  
 * Deploying Ansible.  
