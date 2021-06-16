@@ -1,0 +1,19 @@
+---
+ -
+  name: This is my first play
+  hosts: myservers
+  tasks:
+          - name: Copy the file
+            copy:
+                    src=./test1234.xml
+                    dest=/tmp
+ -
+  name: This is my second play
+  hosts: myservers
+  tasks:
+          - name: Create User
+            user:
+                    name=test_ansible
+                    state=absent
+                    remove=yes
+...

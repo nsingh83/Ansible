@@ -1,0 +1,14 @@
+---
+ - 
+    name: playbook variable
+    hosts: myservers
+    gather_facts: False
+    vars:
+            source_file: ./var2.yml
+            destination:  /tmp
+    tasks:
+            - name: Copy the file.
+              copy:
+                      src: "{{source_file}}"
+                      dest: "{{destination}}"
+...

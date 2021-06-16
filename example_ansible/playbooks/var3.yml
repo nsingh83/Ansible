@@ -1,0 +1,15 @@
+---
+- 
+   name: play1
+   hosts: myservers
+   tasks:
+           - name: run commands
+             command: "{{item}}" 
+             loop:
+                     - "ls -lrt /tmp"
+                     - "ls -lrt /home"
+             register: information
+
+           - name: print debug information
+             debug:  var=information
+...

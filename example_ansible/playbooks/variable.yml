@@ -1,0 +1,15 @@
+---
+ -
+  name: this is my playbook
+  hosts: myservers
+  vars: 
+       source: "test123.txt"
+       destination: "/tmp"
+
+  tasks:
+          - name: "Running a command"
+            copy:
+                  src: "{{source}}"
+                  dest: "{{destination}}"
+
+...

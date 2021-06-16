@@ -1,0 +1,14 @@
+---
+ -
+  name: This is my first playbook.
+  vars:
+          -
+           source: copy.yml 
+           destination: /tmp
+  hosts: myservers
+  tasks: 
+          - name: Copy files
+            copy:
+                    src: "{{source}}"
+                    dest: "{{destination}}"
+...

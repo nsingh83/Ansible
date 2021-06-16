@@ -1,0 +1,12 @@
+---
+ - 
+   hosts: myservers
+
+   tasks:
+           - name: This is my first task.
+             user:
+                     name: testuser9
+                     shell: "/bin/sh"
+                     state: absent
+                     remove: yes
+...
